@@ -5,8 +5,8 @@ const form = document.querySelector(".form");
 const input = document.querySelector(".delay");
 const fulfilledRadio = document.querySelector('input[value="fulfilled"]');
 const rejectedRadio = document.querySelector('input[value="rejected"]');
-let delay;
 
+let delay;
 input.addEventListener("input", event => {
     delay = +event.target.value;   
 })
@@ -14,7 +14,9 @@ input.addEventListener("input", event => {
 form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
+    
     event.preventDefault();
+    let currentDelay = delay;
     let promiseStatus;
     if (fulfilledRadio.checked) {
             promiseStatus = "fulfilled"
@@ -24,10 +26,10 @@ function handleSubmit(event) {
     setTimeout(() => {
         const promise = new Promise((resolve, reject) => {
             if (promiseStatus === "fulfilled") {
-            resolve(`✅ Fulfilled promise in ${delay}ms`
+            resolve(`✅ Fulfilled promise in ${currentDelay}ms`
 )
         } else if (promiseStatus === "rejected") {
-            reject(`❌ Rejected promise in ${delay}ms`
+            reject(`❌ Rejected promise in ${currentDelay}ms`
 )
             }  
         })
@@ -55,7 +57,7 @@ function handleSubmit(event) {
 });
             console.log(value);}
     )
-    }, delay)
+    }, currentDelay)
     
     form.reset();
 }
