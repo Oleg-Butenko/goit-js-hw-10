@@ -1,18 +1,73 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+Body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+.datetime-picker {
+  width: 200px;
+  height: 20px;
+}
+
+.start {
+  width: 80px;
+  height: 25px;
+}
+
+.timer {
+  display: flex;
+  gap: 30px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.value {
+  font-size: 40px;
+  text-align: center;
+}
+
+.label {
+  text-transform: uppercase;
+}
+
+.delay-label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.delay {
+  width: 270px;
+  height: 30px;
+}
+
+.radio-fildset {
+  width: 250px;
+}
+
+.submit {
+  width: 279px;
+  margin-top: 10px;
+}
+
+.nav-btn {
+  display: inline-block;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  padding: 8px;
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.nav-btn:hover {
+  color: #fff;
+  background-color: #2e2f42;
+}
